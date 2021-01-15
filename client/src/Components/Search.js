@@ -10,7 +10,11 @@ import { Row, Col, Dropdown, Form, Spinner } from "react-bootstrap";
 
 const SearchInput = React.forwardRef(
   ({ children, value, changeInput, spinner }, ref) => (
-    <Form>
+    <Form
+      onSubmit={(e) => {
+        e.preventDefault();
+      }}
+    >
       <Form.Group>
         <Form.Control
           ref={ref}
